@@ -49,9 +49,7 @@ class TagDeleteView(generic.DeleteView):
 
 def change_task_status(request, pk):
     task = Task.objects.get(id=pk)
-    if (
-        task.is_completed
-    ):
+    if task.is_completed:
         task.is_completed = False
     else:
         task.is_completed = True
